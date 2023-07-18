@@ -1,4 +1,3 @@
-import ContactForm from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Section } from './Section/Section';
 import { Filter } from './Filter/Filter';
@@ -8,6 +7,7 @@ import initialContact from './dataBase/initialContacts';
 import nanoId from 'nano-id';
 
 import css from './App.module.css';
+import { ContactForm } from './ContactForm/ContactForm';
 
 const getInitialContacts = () => {
   const savedContacts = localStorage.getItem('contacts');
@@ -38,6 +38,7 @@ export const App = () => {
   }, [contacts]);
 
   const addContact = data => {
+    console.log('data', data);
     const newContact = {
       id: nanoId(),
       ...data,
